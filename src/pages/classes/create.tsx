@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
 import { Loader2 } from "lucide-react";
-import UploadWidget from "@/components/upload-widget";
+import UploadWidget from "@/components/Upload-widget";
 
 const Create = () => {
   const back = useBack(); // Navigate back
