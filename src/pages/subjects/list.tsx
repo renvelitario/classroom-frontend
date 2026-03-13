@@ -14,9 +14,8 @@ import { Badge } from "@/components/ui/badge"
 
 const SubjectList = () => {
   const [searchQuery, setSearchQuery] = useState('')
-
   const [selectedDepartment, setSelectedDepartment] = useState('')
-
+  
   const departmentFilters = selectedDepartment === 'all' ? [] : [{ field: 'department', operator: 'eq' as const, value: selectedDepartment }]
 
   const searchFilters = searchQuery ? [{ field: 'name', operator: 'contains' as const, value: searchQuery }] : []

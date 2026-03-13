@@ -3,7 +3,7 @@ import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import routerProvider, {
-DocumentTitleHandler,
+  DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
@@ -34,34 +34,39 @@ function App() {
                 syncWithLocation: true,
                 warnWhenUnsavedChanges: true,
                 projectId: "163waY-Q8UQNn-3QgAMU",
+                title: {
+                  text: "University Management System",
+                  icon: <GraduationCap />,
+                },
               }}
-
               resources={[
                 {
                   name: "dashboard",
                   list: "/",
-                  meta: { label: "Home", icon: <Home /> }
+                  meta: { label: "Home", icon: <Home /> },
                 },
                 {
                   name: "subjects",
                   list: "/subjects",
-                  create: '/subjects/create',
-                  meta: { label: "Subjects", icon: <BookOpen /> }
+                  create: "/subjects/create",
+                  meta: { label: "Subjects", icon: <BookOpen /> },
                 },
                 {
                   name: "classes",
                   list: "/classes",
-                  create: '/classes/create',
-                  meta: { label: "Classes", icon: <GraduationCap /> }
+                  create: "/classes/create",
+                  meta: { label: "Classes", icon: <GraduationCap /> },
                 },
               ]}
             >
               <Routes>
-                <Route element={
-                  <Layout>
-                    <Outlet />
-                  </Layout>
-                }>
+                <Route
+                  element={
+                    <Layout>
+                      <Outlet />
+                    </Layout>
+                  }
+                >
                   <Route path="/" element={<Dashboard />} />
 
                   <Route path="/subjects">
@@ -84,7 +89,7 @@ function App() {
           </DevtoolsProvider>
         </ThemeProvider>
       </RefineKbarProvider>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
 
